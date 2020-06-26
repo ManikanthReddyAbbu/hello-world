@@ -7,13 +7,15 @@ pipeline{
                 sh 'mvn clean compile'
             }
         }
-        stage('Test') {
+       
+		stage('Test') {
             steps {
                 withMaven(maven : 'Maven')
                 sh 'mvn test'
             }
         }
-        stage('deploy') {
+      
+		stage('deploy') {
             steps {
                 withMaven(maven : 'Maven')
                 sh 'mvn deploy'
